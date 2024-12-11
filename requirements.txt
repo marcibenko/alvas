@@ -2,3 +2,4 @@ streamlit
 keras
 tensorflow
 joblib
+sklearn
