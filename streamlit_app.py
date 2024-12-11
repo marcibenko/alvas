@@ -62,3 +62,4 @@ with st.form("my_form"):
 
 if submitted:
         st.write(input)
+        st.write("done")
