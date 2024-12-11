@@ -1,11 +1,11 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import tensorflow
+import tensorflow as tf
 import joblib
 
-#model = load_model("sleep_efficiency_model.h5")
-#scaler = joblib.load('scaler.pkl')
+model = tf.keras.models.load_model('alvos.keras')
+scaler = joblib.load('scaler.pkl')
 
 st.title("Sleep Efficiency")
 
@@ -61,5 +61,7 @@ with st.form("my_form"):
     
 
 if submitted:
-        st.write(input)
-        st.write("done")
+        st.write("Sleep Efficiency:")
+        scaled_data = scaler.transform(input)
+        prediction = model.predict(scaled_data)
+        st.write(prediction[0][0])
