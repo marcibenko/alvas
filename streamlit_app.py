@@ -56,7 +56,7 @@ with st.form("my_form"):
         "smoking_status": smoking_binary,
         "exercise": exercise,
     }
-    input =  np.array(data)
+    input =  np.array([x for x in data.values()]).reshape(1, -1)
     submitted = st.form_submit_button("Submit")
     
 
