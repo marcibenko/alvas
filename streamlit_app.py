@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from tensorflow.keras.models import load_model
+import tensorflow
 import joblib
 
 #model = load_model("sleep_efficiency_model.h5")
@@ -56,7 +56,7 @@ with st.form("my_form"):
         "smoking_status": smoking_binary,
         "exercise": exercise,
     }
-    input =  pd.DataFrame(data)
+    input =  np.array(data)
     submitted = st.form_submit_button("Submit")
     
 
